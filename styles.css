@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #11175E;
+  --secondary-color: rgba(45, 112, 253, 1);
+  --text-gray: rgba(177, 186, 203, 1);
+  --border-color: #d1d1d1;
+  --border-radius: 8px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 30px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Rubik;
+}
+
+h1 {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-weight: 500;
+}
+
+h3 {
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+h4 {
+  border: 2px solid var(--text-gray);
+  border-radius: var(--border-radius);
+  width: max-content;
+  padding: var(--spacing-sm);
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+header {
+  margin-top: var(--spacing-sm);
+  color: var(--primary-color);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 16px;
+}
+
+button {
+  background-color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  color: white;
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  width: 600px;
+}
+
+.form-button {
+  height: 45px;
+}
+
+main {
+  margin-top: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  width: 95vw;
+  max-width: 600px;
+}
+
+.task {
+  min-height: 204px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taskDetails {
+  width: 100%;
+}
+
+.taskType {
+  margin-top: 10px;
+  color: var(--text-gray);
+}
+
+.taskCreation {
+  margin-top: 10px;
+  color: var(--text-gray);
+}
+
+.task-button {
+  width: 100px;
+  min-height: 40px;
+}
+
+.img-done {
+  display: none;
+}
+
+footer {
+  margin-top: var(--spacing-lg);
+  width: 95vw;
+  max-width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 0;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-sm);
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Adicione estas regras ao seu CSS */
+
+.task-completed {
+    border-color: #4CAF50 !important;
+    background-color: #f8f9fa;
+    opacity: 0.8;
+}
+
+.task-completed h2 {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.task {
+    animation: fadeIn 0.3s ease-in;
+}
+
+
+.task-button:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}
+
+.img-done {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+}
+
+@media (min-width: 1024px) {
+  form {
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    max-width: 800px;
+  }
+  
+  input {
+    width: 65%;
+    margin: 0;
+  }
+  
+  .form-button {
+    width: 35%;
+    height: 50px;
+  }
+  
+  .task {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: auto;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  .task-button {
+    width: auto;
+    min-width: 120px;
+  }
+}
